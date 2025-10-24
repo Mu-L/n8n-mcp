@@ -1,60 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1761303633804,
+  "lastUpdate": 1761307335438,
   "repoUrl": "https://github.com/czlonkowski/n8n-mcp",
   "entries": {
     "n8n-mcp Benchmarks": [
-      {
-        "commit": {
-          "author": {
-            "email": "56956555+czlonkowski@users.noreply.github.com",
-            "name": "Romuald Członkowski",
-            "username": "czlonkowski"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "287b9aa8193f7ad4dcd0b22c7ee06e9d3ee31364",
-          "message": "Merge pull request #263 from czlonkowski/feat/integration-tests-phase-6\n\nfeat: Phase 6A integration tests (workflow validation)",
-          "timestamp": "2025-10-05T09:19:11+02:00",
-          "tree_id": "fbb6c48457bd0eb0e9ee615e17a8e4fbb0d7d3c8",
-          "url": "https://github.com/czlonkowski/n8n-mcp/commit/287b9aa8193f7ad4dcd0b22c7ee06e9d3ee31364"
-        },
-        "date": 1759648855683,
-        "tool": "customSmallerIsBetter",
-        "benches": [
-          {
-            "name": "sample - array sorting - small",
-            "value": 0.0192,
-            "range": "0.2331",
-            "unit": "ms",
-            "extra": "52205 ops/sec"
-          },
-          {
-            "name": "sample - array sorting - large",
-            "value": 3.3918,
-            "range": "0.6579000000000002",
-            "unit": "ms",
-            "extra": "295 ops/sec"
-          },
-          {
-            "name": "sample - string concatenation",
-            "value": 0.0047,
-            "range": "0.2581",
-            "unit": "ms",
-            "extra": "212655 ops/sec"
-          },
-          {
-            "name": "sample - object creation",
-            "value": 0.0702,
-            "range": "0.4002",
-            "unit": "ms",
-            "extra": "14249 ops/sec"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -1857,6 +1805,37 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/czlonkowski/n8n-mcp/commit/56114f041b245717fa3ea832b2f5f9d451160813"
         },
         "date": 1761303633076,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "sample - array sorting - small",
+            "value": 0.0136,
+            "range": "0.3096",
+            "unit": "ms",
+            "extra": "73341 ops/sec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "56956555+czlonkowski@users.noreply.github.com",
+            "name": "Romuald Członkowski",
+            "username": "czlonkowski"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "913ff31164351a04e9c7a3c4fe550f8222e8ab62",
+          "message": "Merge pull request #363 from czlonkowski/fix/release-workflow-yaml-syntax\n\nfix: resolve YAML syntax error in release.yml workflow",
+          "timestamp": "2025-10-24T14:00:27+02:00",
+          "tree_id": "220e6fb0a5d90a97256354cd7813e4525804cffb",
+          "url": "https://github.com/czlonkowski/n8n-mcp/commit/913ff31164351a04e9c7a3c4fe550f8222e8ab62"
+        },
+        "date": 1761307335146,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
