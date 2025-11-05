@@ -1,60 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1762269350647,
+  "lastUpdate": 1762384946020,
   "repoUrl": "https://github.com/czlonkowski/n8n-mcp",
   "entries": {
     "n8n-mcp Benchmarks": [
-      {
-        "commit": {
-          "author": {
-            "email": "56956555+czlonkowski@users.noreply.github.com",
-            "name": "Romuald Członkowski",
-            "username": "czlonkowski"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "f33b6261793d04e2e9a014548770610efc7c8f9d",
-          "message": "Merge pull request #287 from czlonkowski/fix/cicd-release-pipeline-failures\n\nfix: resolve CI/CD release pipeline failures and optimize workflow",
-          "timestamp": "2025-10-08T09:18:44+02:00",
-          "tree_id": "8ff09d32412e41b1f365dcd271f1b5e3789fc505",
-          "url": "https://github.com/czlonkowski/n8n-mcp/commit/f33b6261793d04e2e9a014548770610efc7c8f9d"
-        },
-        "date": 1759908039081,
-        "tool": "customSmallerIsBetter",
-        "benches": [
-          {
-            "name": "sample - array sorting - small",
-            "value": 0.019,
-            "range": "0.2286",
-            "unit": "ms",
-            "extra": "52629 ops/sec"
-          },
-          {
-            "name": "sample - array sorting - large",
-            "value": 3.3875,
-            "range": "0.46399999999999997",
-            "unit": "ms",
-            "extra": "295 ops/sec"
-          },
-          {
-            "name": "sample - string concatenation",
-            "value": 0.0046,
-            "range": "0.293",
-            "unit": "ms",
-            "extra": "215558 ops/sec"
-          },
-          {
-            "name": "sample - object creation",
-            "value": 0.0659,
-            "range": "0.29",
-            "unit": "ms",
-            "extra": "15183 ops/sec"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -1563,6 +1511,37 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/czlonkowski/n8n-mcp/commit/a4ef1efaf87795bafda3e230ffb2c0b4e3fcb253"
         },
         "date": 1762269350066,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "sample - array sorting - small",
+            "value": 0.0136,
+            "range": "0.3096",
+            "unit": "ms",
+            "extra": "73341 ops/sec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "56956555+czlonkowski@users.noreply.github.com",
+            "name": "czlonkowski",
+            "username": "czlonkowski"
+          },
+          "committer": {
+            "email": "56956555+czlonkowski@users.noreply.github.com",
+            "name": "czlonkowski",
+            "username": "czlonkowski"
+          },
+          "distinct": true,
+          "id": "1834d474a52f5d111685bdbb7750ed5f951e4361",
+          "message": "update privacy policy",
+          "timestamp": "2025-11-06T00:20:36+01:00",
+          "tree_id": "606cdc1a54f4cddb6eb845474c6707376901d337",
+          "url": "https://github.com/czlonkowski/n8n-mcp/commit/1834d474a52f5d111685bdbb7750ed5f951e4361"
+        },
+        "date": 1762384945651,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
