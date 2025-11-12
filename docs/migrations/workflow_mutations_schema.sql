@@ -120,9 +120,9 @@ CREATE INDEX IF NOT EXISTS idx_workflow_mutations_validation_success
 CREATE INDEX IF NOT EXISTS idx_workflow_mutations_user_time
   ON workflow_mutations(user_id, created_at DESC);
 
--- Find mutations with significant changes
+-- Find mutations with significant changes (expression index)
 CREATE INDEX IF NOT EXISTS idx_workflow_mutations_significant_changes
-  ON workflow_mutations(nodes_added + nodes_removed + nodes_modified)
+  ON workflow_mutations((nodes_added + nodes_removed + nodes_modified))
   WHERE (nodes_added + nodes_removed + nodes_modified) > 0;
 
 -- Comments for documentation
