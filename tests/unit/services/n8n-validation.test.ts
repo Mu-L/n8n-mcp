@@ -367,6 +367,22 @@ describe('n8n-validation', () => {
         expect(cleaned.name).toBe('Test Workflow');
       });
 
+      it('should exclude description field for n8n API compatibility (Issue #431)', () => {
+        const workflow = {
+          name: 'Test Workflow',
+          description: 'This is a test workflow description',
+          nodes: [],
+          connections: {},
+          versionId: 'v123',
+        } as any;
+
+        const cleaned = cleanWorkflowForUpdate(workflow);
+
+        expect(cleaned).not.toHaveProperty('description');
+        expect(cleaned).not.toHaveProperty('versionId');
+        expect(cleaned.name).toBe('Test Workflow');
+      });
+
       it('should omit settings property when no settings provided (Issue #431)', () => {
         const workflow = {
           name: 'Test Workflow',

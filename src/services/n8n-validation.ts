@@ -140,6 +140,7 @@ export function cleanWorkflowForUpdate(workflow: Workflow): Partial<Workflow> {
     // Remove fields that cause API errors
     pinData,
     tags,
+    description, // Issue #431: n8n returns this field but rejects it in updates
     // Remove additional fields that n8n API doesn't accept
     isArchived,
     usedCredentials,
