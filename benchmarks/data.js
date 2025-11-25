@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764095015199,
+  "lastUpdate": 1764102789084,
   "repoUrl": "https://github.com/czlonkowski/n8n-mcp",
   "entries": {
     "n8n-mcp Benchmarks": [
-      {
-        "commit": {
-          "author": {
-            "email": "56956555+czlonkowski@users.noreply.github.com",
-            "name": "Romuald Członkowski",
-            "username": "czlonkowski"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "fe1309151ae6645e1d776d69cde8a72a10890d2e",
-          "message": "fix: Implement warm start pattern for session restoration (v2.19.5) (#320)\n\nFixes critical bug where synthetic MCP initialization had no HTTP context\nto respond through, causing timeouts. Implements warm start pattern that\nhandles the current request immediately.\n\nBreaking Changes:\n- Deleted broken initializeMCPServerForSession() method (85 lines)\n- Removed unused InitializeRequestSchema import\n\nImplementation:\n- Warm start: restore session → handle request immediately\n- Client receives -32000 error → auto-retries with initialize\n- Idempotency guards prevent concurrent restoration duplicates\n- Cleanup on failure removes failed sessions\n- Early return prevents double processing\n\nChanges:\n- src/http-server-single-session.ts: Simplified restoration (lines 1118-1247)\n- tests/integration/session-restoration-warmstart.test.ts: 9 new tests\n- docs/MULTI_APP_INTEGRATION.md: Warm start documentation\n- CHANGELOG.md: v2.19.5 entry\n- package.json: Version bump to 2.19.5\n- package.runtime.json: Version bump to 2.19.5\n\nTesting:\n- 9/9 new integration tests passing\n- 13/13 existing session tests passing\n- No regressions in MCP tools (12 tools verified)\n- Build and lint successful\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-authored-by: Claude <noreply@anthropic.com>",
-          "timestamp": "2025-10-13T23:42:10+02:00",
-          "tree_id": "7273ef5c5ebc47ac2521a86f0423bf9527cd467e",
-          "url": "https://github.com/czlonkowski/n8n-mcp/commit/fe1309151ae6645e1d776d69cde8a72a10890d2e"
-        },
-        "date": 1760391834049,
-        "tool": "customSmallerIsBetter",
-        "benches": [
-          {
-            "name": "sample - array sorting - small",
-            "value": 0.0136,
-            "range": "0.3096",
-            "unit": "ms",
-            "extra": "73341 ops/sec"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -1542,6 +1511,37 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/czlonkowski/n8n-mcp/commit/c974947c84f939475ad0a37c8ca3dfb998921550"
         },
         "date": 1764095014574,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "sample - array sorting - small",
+            "value": 0.0136,
+            "range": "0.3096",
+            "unit": "ms",
+            "extra": "73341 ops/sec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "56956555+czlonkowski@users.noreply.github.com",
+            "name": "Romuald Członkowski",
+            "username": "czlonkowski"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1be06c217f088d6d9a7e273c773fe8ab1e8de7dc",
+          "message": "fix: synchronize tool documentation with v2.26.0 tool consolidation (v2.26.2) (#442)\n\n* fix: synchronize tool documentation with v2.26.0 tool consolidation (v2.26.2)\n\n- Delete 23 obsolete documentation files for removed tools\n- Create consolidated documentation for get_node, validate_node, n8n_executions\n- Update search_templates with all searchModes\n- Update n8n_get_workflow with all modes\n- Fix stale relatedTools references\n- Update tools-documentation.ts overview to reflect 19 consolidated tools\n\nConceived by Romuald Członkowski - www.aiadvisors.pl/en\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\n\n* fix: address code review - fix remaining stale tool references\n\n- Fix relatedTools in system/tools-documentation.ts (get_node_for_task → search_templates)\n- Fix relatedTools in validation/validate-workflow.ts (remove references to removed tools)\n- Fix relatedTools in n8n-autofix-workflow.ts (remove references to removed tools)\n- Update tools-n8n-friendly.ts with consolidated tools (validate_node, get_node, search_templates)\n\nConceived by Romuald Członkowski - www.aiadvisors.pl/en\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\n\n* fix: address final code review - fix remaining stale references\n\n- Fix ai-agents-guide.ts: get_node_essentials → get_node, remove list_ai_tools\n- Fix get-template.ts: list_node_templates → search_templates, remove get_templates_for_task\n- Fix n8n-list-workflows.ts: n8n_get_workflow_minimal → n8n_get_workflow, n8n_list_executions → n8n_executions\n- Fix n8n-trigger-webhook-workflow.ts: n8n_get_execution/n8n_list_executions → n8n_executions\n- Fix n8n-delete-workflow.ts: n8n_get_workflow_minimal → n8n_get_workflow, n8n_delete_execution → n8n_executions\n- Fix CHANGELOG date typo: 2025-01-25 → 2025-11-25\n\nConceived by Romuald Członkowski - www.aiadvisors.pl/en\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\n\n* test: adjust comprehensive docs threshold after tool consolidation\n\nReduce expected character count from 5000 to 4000 in tool-invocation.test.ts\nto account for reduced documentation after v2.26.0 tool consolidation\n(31→19 tools, actual output is ~4645 chars).\n\nConceived by Romuald Członkowski - www.aiadvisors.pl/en\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\n\n---------\n\nCo-authored-by: Claude <noreply@anthropic.com>",
+          "timestamp": "2025-11-25T21:28:11+01:00",
+          "tree_id": "985ac102ed667d28285a6fec8838582171744aa1",
+          "url": "https://github.com/czlonkowski/n8n-mcp/commit/1be06c217f088d6d9a7e273c773fe8ab1e8de7dc"
+        },
+        "date": 1764102788423,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
