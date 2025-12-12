@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1765540397936,
+  "lastUpdate": 1765542756082,
   "repoUrl": "https://github.com/czlonkowski/n8n-mcp",
   "entries": {
     "n8n-mcp Benchmarks": [
-      {
-        "commit": {
-          "author": {
-            "email": "56956555+czlonkowski@users.noreply.github.com",
-            "name": "Romuald Członkowski",
-            "username": "czlonkowski"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "913ff31164351a04e9c7a3c4fe550f8222e8ab62",
-          "message": "Merge pull request #363 from czlonkowski/fix/release-workflow-yaml-syntax\n\nfix: resolve YAML syntax error in release.yml workflow",
-          "timestamp": "2025-10-24T14:00:27+02:00",
-          "tree_id": "220e6fb0a5d90a97256354cd7813e4525804cffb",
-          "url": "https://github.com/czlonkowski/n8n-mcp/commit/913ff31164351a04e9c7a3c4fe550f8222e8ab62"
-        },
-        "date": 1761307335146,
-        "tool": "customSmallerIsBetter",
-        "benches": [
-          {
-            "name": "sample - array sorting - small",
-            "value": 0.0136,
-            "range": "0.3096",
-            "unit": "ms",
-            "extra": "73341 ops/sec"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -1540,6 +1509,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/czlonkowski/n8n-mcp/commit/47510ef6dad95bfe463ca6e006ab9e9bd2b9a482"
         },
         "date": 1765540397564,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "sample - array sorting - small",
+            "value": 0.0136,
+            "range": "0.3096",
+            "unit": "ms",
+            "extra": "73341 ops/sec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "romualdczlonkowski@MacBook-Pro-Romuald.local",
+            "name": "Romuald Członkowski"
+          },
+          "committer": {
+            "email": "romualdczlonkowski@MacBook-Pro-Romuald.local",
+            "name": "Romuald Członkowski"
+          },
+          "distinct": true,
+          "id": "fa7d0b420ec6be9688f83d148c39ed9912ff8adc",
+          "message": "ci: switch NPM publishing to Trusted Publishing (OIDC)\n\nReplace static NPM_TOKEN with OIDC-based authentication for improved\nsecurity. This uses NPM's Trusted Publishing feature which:\n- Eliminates need for long-lived tokens\n- Provides provenance attestation\n- Is the recommended approach by npm\n\nRequires configuring Trusted Publishing in npm package settings:\n- Repository owner: czlonkowski\n- Repository name: n8n-mcp\n- Workflow filename: release.yml\n\nConceived by Romuald Członkowski - www.aiadvisors.pl/en\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>",
+          "timestamp": "2025-12-12T13:24:25+01:00",
+          "tree_id": "68a2ec850bbdd41aa04ad5bba72ed38fcef81f81",
+          "url": "https://github.com/czlonkowski/n8n-mcp/commit/fa7d0b420ec6be9688f83d148c39ed9912ff8adc"
+        },
+        "date": 1765542755830,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
