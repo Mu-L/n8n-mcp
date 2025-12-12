@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1765545538334,
+  "lastUpdate": 1765553025911,
   "repoUrl": "https://github.com/czlonkowski/n8n-mcp",
   "entries": {
     "n8n-mcp Benchmarks": [
-      {
-        "commit": {
-          "author": {
-            "email": "56956555+czlonkowski@users.noreply.github.com",
-            "name": "Romuald Członkowski",
-            "username": "czlonkowski"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "bfff497020b2afef9445faeac4c6bf6cd0854031",
-          "message": "Merge pull request #367 from czlonkowski/claude/review-issues-011CUSqcrxxERACFeLLWjPzj\n\n…ssue #349)\n\nAddresses \"Cannot read properties of undefined (reading 'map')\" error by adding validation and fallback handling for n8n API responses.\n\nChanges:\n\nAdd response structure validation in listWorkflows, listExecutions, listCredentials, and listTags methods\nHandle edge case where API returns array directly instead of {data: [], nextCursor} wrapper object\nProvide clear error messages when response format is unexpected\nAdd logging when using fallback format handling\nThis fix ensures compatibility with different n8n API versions and prevents runtime errors when the response structure varies from expected.\n\nFixes #349\n\nConceived by Romuald Członkowski - www.aiadvisors.pl/en",
-          "timestamp": "2025-10-25T13:29:45+02:00",
-          "tree_id": "940161adbe898380beef15a0aea98155639aeac3",
-          "url": "https://github.com/czlonkowski/n8n-mcp/commit/bfff497020b2afef9445faeac4c6bf6cd0854031"
-        },
-        "date": 1761391943743,
-        "tool": "customSmallerIsBetter",
-        "benches": [
-          {
-            "name": "sample - array sorting - small",
-            "value": 0.0136,
-            "range": "0.3096",
-            "unit": "ms",
-            "extra": "73341 ops/sec"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -1534,6 +1503,35 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/czlonkowski/n8n-mcp/commit/c6f3733fbd6de37b1514f5800cb8d43bded30eee"
         },
         "date": 1765545538067,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "sample - array sorting - small",
+            "value": 0.0136,
+            "range": "0.3096",
+            "unit": "ms",
+            "extra": "73341 ops/sec"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "romualdczlonkowski@MacBook-Pro-Romuald.local",
+            "name": "Romuald Członkowski"
+          },
+          "committer": {
+            "email": "romualdczlonkowski@MacBook-Pro-Romuald.local",
+            "name": "Romuald Członkowski"
+          },
+          "distinct": true,
+          "id": "551445bcd5b8bd16fb273a3a129142e50401ed99",
+          "message": "fix: revert to Node 20 and use granular NPM token\n\nNPM classic tokens were revoked on Dec 9, 2025. OIDC trusted publishing\nrequires npm >= 11.5.1 which caused lockfile sync issues with npm ci.\n\nReverted to Node 20 with granular access token approach:\n- Removed OIDC permissions block\n- Removed npm upgrade step\n- Restored NODE_AUTH_TOKEN usage\n- Removed --provenance flag\n\nUser created new granular token with \"Bypass 2FA\" enabled.\n\nConceived by Romuald Członkowski - www.aiadvisors.pl/en\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>",
+          "timestamp": "2025-12-12T16:22:04+01:00",
+          "tree_id": "ca956e8b4150654d91afa6662138a60406f46e99",
+          "url": "https://github.com/czlonkowski/n8n-mcp/commit/551445bcd5b8bd16fb273a3a129142e50401ed99"
+        },
+        "date": 1765553025512,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
